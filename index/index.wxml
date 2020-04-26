@@ -1,0 +1,14 @@
+<view class="test-box">
+  <areasPicker
+    areas-value="{{areasValue}}"
+    show-areas="{{showAreas}}"
+    areas-level="3"
+    bind:Callback="callAreas">
+  </areasPicker>
+  <view bind:tap="chooseAreas">
+  点击选择省市区
+  <view>
+    当前选择: {{areasData.province.name || ''}} - {{areasData.city.name || ''}} - {{areasData.area.name || ''}} - {{areasData.streets.name || ''}}
+  </view>
+  </view>
+</view>

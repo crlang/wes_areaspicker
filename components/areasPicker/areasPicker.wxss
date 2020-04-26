@@ -1,0 +1,98 @@
+/* components/areasPicker/areasPicker.wxss */
+.areas-picker {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.areas-picker.-show {}
+
+.areas-picker--mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 997;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+}
+.areas-picker.-show .areas-picker--mask {
+  display: block;
+}
+
+.areas-picker--container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 560rpx;
+  background: #fff;
+  transform: translateY(200%);
+  transition: all 0.25s linear;
+  z-index: 999;
+  border-bottom: 68rpx;/* 兼容全面异形屏 */
+}
+.areas-picker.-show .areas-picker--container {
+  transform: translateY(0);
+}
+
+.areas-picker-header {
+  box-sizing: border-box;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  font-size: 32rpx;
+  color: #333;
+}
+.areas-picker-header .-close {
+  position: absolute;
+  right: 30rpx;
+  top: calc(50% - 16rpx);
+  width: 32rpx;
+  height: 32rpx;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgBAMAAACBVGfHAAAAJFBMVEUAAACKioqJiYmKioqKioqJiYmJiYmKioqKioqKioqJiYmKiorUTRlXAAAAC3RSTlMAMPCf4LBfwJBvgL4XDsYAAACMSURBVCjPRc8xCsJgEEThEVGwk+AFrG3SW+UGHiH3yBFyG4OF7uUM5P15A1ssfMVMLmNizmPmJTHPX6bq/Y+1pFtPUPccHtUL3tdsRBCIACKACCACiADSgAQgAUgAEkDLqeoVQknqOpO6zqSuM7e6AuoK2iIBRAARQAQQAWQHkhkA+WYCQD7phsTchj+jKUyyA0GYNAAAAABJRU5ErkJggg==');
+  -webkit-background-size: 80%;
+  background-size: 80%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.areas-picker-content .-tabs {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  white-space: nowrap;
+  text-align: left;
+}
+.areas-picker-content .-tabs .-tab {
+  box-sizing: border-box;
+  display: inline-block;
+  padding: 0 15rpx;
+  margin: 0;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 28rpx;
+  color: #333;
+  border-bottom: 4rpx solid transparent;
+}
+.areas-picker-content .-tabs .-tab.selected {
+  color: #1aad19;
+  border-color: #1aad19;
+}
+.areas-picker-content .-items {
+  box-sizing: border-box;
+  padding: 0 30rpx;
+  height: calc(560rpx - 180rpx);
+}
+.areas-picker-content .-items .-item {
+  box-sizing: border-box;
+  height: 72rpx;
+  line-height: 72rpx;
+  font-size: 26rpx;
+  text-align: left;
+  color: #333;
+  padding: 0;
+  margin: 0;
+}

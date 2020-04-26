@@ -1,0 +1,18 @@
+<!--components/areasPicker/areasPicker.wxml-->
+<view class="areas-picker {{dialog ? '-show' : ''}}">
+  <view class="areas-picker--mask" bindtap="_hide"></view>
+  <view class="areas-picker--container">
+    <view class="areas-picker-header">
+      <view class="-name">所在地区</view>
+      <view class="-close" bind:tap="_hide"></view>
+    </view>
+    <view class="areas-picker-content">
+      <scroll-view scroll-x class="-tabs">
+        <view class="-tab {{selectIndex === index ? 'selected' : ''}}" wx:for="{{selectData}}" wx:key="item" wx:if="{{selectIndex >= index}}" data-i="{{index}}" bind:tap="_changeArea"><text>{{item.name}}</text></view>
+      </scroll-view>
+      <scroll-view scroll-y class="-items">
+        <view class="-item" wx:for="{{areasData}}" wx:key="item" data-id="{{item.id}}" data-name="{{item.name}}" data-i="{{index}}" bind:tap="_select"><text>{{item.name}}</text></view>
+      </scroll-view>
+    </view>
+  </view>
+</view>
